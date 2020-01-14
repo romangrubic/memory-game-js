@@ -9,8 +9,11 @@ body {
 }
 
 .memory-setup {
-    width: 700px;
-    height: 700px;
+    width: 30%;
+    min-width: 300px;
+    max-width: 600px;
+    height: 65%;
+    min-height: 500px;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
@@ -18,10 +21,17 @@ body {
 }
 
 .memory-card {
-    width: 25%;
-    height: 25%;
+    width: 24.5%;
+    height: 24.5%;
+    margin: 0.25% 0.25%;
     display: inline-block;
     position: relative;
+    transform:scale(1)
+}
+
+.memory-card:active {
+    transform: scale(0.975);
+    transition: transform 0.25s;
 }
 
 .back-face, .front-face {
