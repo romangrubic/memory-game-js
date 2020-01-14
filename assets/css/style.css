@@ -26,7 +26,7 @@ body {
     margin: 0.25% 0.25%;
     display: inline-block;
     position: relative;
-    transform:scale(1)
+    transform:scale(1);
 }
 
 .memory-card:active {
@@ -34,10 +34,15 @@ body {
     transition: transform 0.25s;
 }
 
-.back-face, .front-face {
+
+.front-face,
+.back-face {
     width: 100%;
     height: 100%;
     position: absolute;
 }
 
-
+.flip {
+    transform: rotateY(180deg);
+    transition: transform 0.5s;
+}
