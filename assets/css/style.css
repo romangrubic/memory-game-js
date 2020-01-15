@@ -18,6 +18,7 @@ body {
     flex-wrap: wrap;
     margin: auto;
     border: 5px solid black;
+    perspective: 1000px;
 }
 
 .memory-card {
@@ -27,6 +28,8 @@ body {
     display: inline-block;
     position: relative;
     transform:scale(1);
+    transform-style: preserve-3d;
+    transition: tranform 0.5s;
 }
 
 .memory-card:active {
@@ -41,8 +44,12 @@ body {
     height: 100%;
     position: absolute;
 }
+.front-face{
+    transform: rotateY(180deg);
+}
 
 .flip {
     transform: rotateY(180deg);
     transition: transform 0.5s;
+    backface-visibility: hidden;
 }
