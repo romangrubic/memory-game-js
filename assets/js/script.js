@@ -1,23 +1,26 @@
 var turnedCard = false;
 var firstCard, secondCard;
-var stopGame = false;
-
-// Library with 16 cards (array) 
+var stopGame = false; 
 var library = document.querySelectorAll(".card");
 
-// Shuffle the library 
-$("#resetBoard").click(function shuffle() {
-    library.forEach(card => {
-        var randomNumber = Math.floor(Math.random() * 16);
+//Shuffle on loading the game page
+window.onload = function(){
+    library.forEach(card => {   
+        var randomNumber = Math.floor(Math.random() * 16);     
         card.style.order = randomNumber;
-        library.removeClass("flip");
+})
+};
+
+// Shuffle the library via the reset button 
+$("#resetBoard").click(function() {
+    library.forEach(card => {   
+        var randomNumber = Math.floor(Math.random() * 16);     
+        card.style.order = randomNumber;
+    $("div").filter(".flip").removeClass("flip");      
     })
 });
 
-
-console.log(library)
 // Function flip a card //
-
 $(".card").click(function flipCard() {
     if (stopGame) return;
     this.classList.toggle("flip");
@@ -34,7 +37,6 @@ $(".card").click(function flipCard() {
 
 
 // Does the cards match? //
-
 function matchCard() {
     if (firstCard.dataset.image === secondCard.dataset.image) {
         console.log("Do they match? Yes! Have a cookie")
@@ -49,9 +51,3 @@ function matchCard() {
         }, 1500)
     }
 };
-
-
-
-
-
-

@@ -7,15 +7,23 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Memory game</title>
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
-	
+
 </head>
 
 <body>
-<header>
-<button id="resetBoard">Reset board</button>
-</header>
-	<section class="memory-setup">
-		<div class="card" data-image="first" >
+	<header>
+		<div class="container heading">
+			<div class="row">
+				<h1>Play!</h1>
+                <p>Match the numbers!</p>
+			</div>
+			<div class="row">
+				<button id="resetBoard">Reset board</button>
+			</div>
+		</div>
+	</header>
+	<section class="board">
+		<div class="card" data-image="first">
 			<img src="assets/images/first-pair.png" class="front-face" alt="Frontside of a card">
 			<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
@@ -31,7 +39,7 @@
 						<img src="assets/images/second-pair.png" class="front-face" alt="Frontside of a card">
 						<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
 						        </div>
-						<div class="card" data-image="third" >
+						<div class="card" data-image="third">
 							<img src="assets/images/third-pair.png" class="front-face" alt="Frontside of a card">
 							<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
@@ -79,11 +87,15 @@
 																		<img src="assets/images/eight-pair.png" class="front-face" alt="Frontside of a card">
 																		<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
-
 	</section>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script>
-<script src="assets/js/script.js"></script>
-    
+	<footer>
+		<div class="row">
+			<h1>Copyright by Roman</h1>
+		</div>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script src="assets/js/script.js"></script>
 </body>
 
 </html>
