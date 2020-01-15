@@ -1,10 +1,25 @@
 var turnedCard = false;
 var firstCard, secondCard;
+var stopGame = false;
+
+// Library with 16 cards (array) 
+var library = document.querySelectorAll(".card");
+
+// Shuffle the library 
+$("#resetBoard").click(function shuffle() {
+    library.forEach(card => {
+        var randomNumber = Math.floor(Math.random() * 16);
+        card.style.order = randomNumber;
+        library.removeClass("flip");
+    })
+});
 
 
-// Function flipCard
+console.log(library)
+// Function flip a card //
 
-$(".memory-card").click(function () {
+$(".card").click(function flipCard() {
+    if (stopGame) return;
     this.classList.toggle("flip");
     if (!turnedCard) {
         turnedCard = true;
@@ -17,16 +32,26 @@ $(".memory-card").click(function () {
     }
 });
 
+
+// Does the cards match? //
+
 function matchCard() {
     if (firstCard.dataset.image === secondCard.dataset.image) {
-        console.log("Do they match? yes")
+        console.log("Do they match? Yes! Have a cookie")
 
     } else {
-        console.log("Do they match? no")
+        console.log("Do they match? No! Wait for next turn")
+        stopGame = true;
         setTimeout(function () {
-            firstCard.classList.toggle("flip")
-            secondCard.classList.toggle("flip")
-        }, 1000)
+            firstCard.classList.toggle("flip");
+            secondCard.classList.toggle("flip");
+            stopGame = false;
+        }, 1500)
     }
 };
+
+
+
+
+
 

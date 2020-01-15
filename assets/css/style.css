@@ -21,7 +21,7 @@ body {
     perspective: 1000px;
 }
 
-.memory-card {
+.card {
     width: 24.5%;
     height: 24.5%;
     margin: 0.25% 0.25%;
@@ -29,12 +29,12 @@ body {
     position: relative;
     transform:scale(1);
     transform-style: preserve-3d;
-    transition: tranform 0.5s;
+    transition: transform 0.3s;
 }
 
-.memory-card:active {
-    transform: scale(0.975);
-    transition: transform 0.25s;
+.card:active {
+    transform: scale(0.9);
+    transition: transform 0.2s;
 }
 
 
@@ -44,12 +44,13 @@ body {
     height: 100%;
     position: absolute;
 }
+
 .front-face{
     transform: rotateY(180deg);
 }
 
 .flip {
     transform: rotateY(180deg);
-    transition: transform 0.5s;
+    transition: transform 0.4s;
     backface-visibility: hidden;
 }
