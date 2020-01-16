@@ -5,24 +5,29 @@ var stopGame = false;
 var library = document.querySelectorAll(".card");
 
 // ---Start Time
-var time = 40; // make options for 20 / 30 / 40 seconds
+var time = 30; // make options for 20 / 30 / 40 seconds
 
 // --- Shuffle on loading the game page
 window.onload = function () {
     flipAdd();
     matchAdd();
     randomOrder();
+    stopGame = true;
+    flipBack();
 };
 
-// --- Reset button
+// --- Play/Reset button
 $("#resetBoard").click(function () {
-    setTimer = time;
+    setTimer=time;
     resetFlip();
     matchedReset();
+    resetScore()
     flipBack();
     randomOrder();
+    startTime()
     stopGame = false;
-    
+    document.getElementById("resetBoard").disabled = true;
+
 });
 // --- Random order for cards
 function randomOrder() {
@@ -59,58 +64,64 @@ function matchCard() {
         flipAdd();
         matchAdd();
         allCardsMatched();
+        calculateScore();
 
     } else {
         console.log("Do they match? No! Wait for next turn");
-        setTimer -- ;
+        setTimer--;
         stopGame = true;
         flipAdd();
         setTimeout(function () {
             firstCard.classList.toggle("flip");
             secondCard.classList.toggle("flip");
             stopGame = false;
-        }, 1500)
+            }, 1500)
     }
 };
 
 // --- Timer 
 var gameTimer = document.getElementById("game-timer");
 var setTimer = time;
+
+function startTime(){
 var timer = setInterval(function () {
-    gameTimer.innerHTML = "- Time left: " + setTimer + "sec -";
-    setTimer --;
-    if (setTimer <= 0) {
-        gameTimer.innerHTML = "- Game over! Board is locked! Reset to try again! -";
-        stopGame = true;
-    }
-}, 1000);
+        gameTimer.innerHTML = "- Time left: " + setTimer + "sec -";
+        setTimer--;
+        if (setTimer <= 0) {
+            gameTimer.innerHTML = "- Game over! Board is locked! Reset to try again! -";
+            stopGame = true;
+            clearInterval(timer)
+            document.getElementById("resetBoard").disabled = false;
+        }
+    }, 1000)};
+
 
 // --- Flip counter
 var flipCounter = document.getElementById("flip-counter");
 var flip = 0;
 
-function resetFlip(){
+function resetFlip() {
     if (flip > 0) { flip = 1 };
     document.getElementById("flip-counter").innerHTML = 0;
 }
 
 function flipAdd() {
     flipCounter.innerHTML = flip;
-    flip ++;
+    flip++;
 }
 
 // --- Matched counter
 var matchCounter = document.getElementById("matched-counter")
 var match = 0
 
-function matchedReset(){
+function matchedReset() {
     if (match > 0) { match = 1 };
     document.getElementById("matched-counter").innerHTML = 0;
 }
 
 function matchAdd() {
     matchCounter.innerHTML = match;
-    match ++ ;
+    match++;
 }
 
 // Game finish - all matched
@@ -118,15 +129,19 @@ function allCardsMatched() {
     if (match === 9) {
         stopGame = true;
         clearInterval(timer);
-        calculateScore();
-    }};
+        document.getElementById("resetBoard").disabled = false;
+    }
+};
 
 // Score calculation
 var score = document.getElementById("score");
-var scoreNumber = "I love Dunja <3"
+var scoreNumber = 0
 
-function calculateScore(){
-    document.getElementById("score").innerHTML = scoreNumber;
+function resetScore() {
+    document.getElementById("score").innerHTML = 0;
 }
 
-// Sort out the SCORE rating system
+function calculateScore() {
+    document.getElementById("score").innerHTML = scoreNumber += 5;
+}
+
