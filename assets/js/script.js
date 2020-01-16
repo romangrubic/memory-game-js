@@ -5,7 +5,7 @@ var stopGame = false;
 var library = document.querySelectorAll(".card");
 
 // ---Start Time
-var time = 20; // make options for 20 / 30 / 40 seconds
+var time = 40; // make options for 20 / 30 / 40 seconds
 
 // --- Shuffle on loading the game page
 window.onload = function () {
@@ -57,11 +57,12 @@ function matchCard() {
         console.log("Do they match? Yes! Have a cookie");
         setTimer += 5;
         flipAdd();
-        matchAdd()
+        matchAdd();
+        allCardsMatched();
 
     } else {
         console.log("Do they match? No! Wait for next turn");
-        setTimer -= 1;
+        setTimer -- ;
         stopGame = true;
         flipAdd();
         setTimeout(function () {
@@ -76,17 +77,13 @@ function matchCard() {
 var gameTimer = document.getElementById("game-timer");
 var setTimer = time;
 var timer = setInterval(function () {
-    gameTimer.innerHTML = setTimer + "sec";
-    setTimer -= 1;
+    gameTimer.innerHTML = "- Time left: " + setTimer + "sec -";
+    setTimer --;
     if (setTimer <= 0) {
         gameTimer.innerHTML = "- Game over! Board is locked! Reset to try again! -";
         stopGame = true;
     }
 }, 1000);
-
-function setTimer(){
-    setTimer = time;
-}
 
 // --- Flip counter
 var flipCounter = document.getElementById("flip-counter");
@@ -99,7 +96,7 @@ function resetFlip(){
 
 function flipAdd() {
     flipCounter.innerHTML = flip;
-    flip += 1;
+    flip ++;
 }
 
 // --- Matched counter
@@ -113,11 +110,23 @@ function matchedReset(){
 
 function matchAdd() {
     matchCounter.innerHTML = match;
-    match += 1;
+    match ++ ;
 }
 
 // Game finish - all matched
-function stopGame {
-//    if (matchedCards = 8) stop the time
-//}
+function allCardsMatched() {
+    if (match === 9) {
+        stopGame = true;
+        clearInterval(timer);
+        calculateScore();
+    }};
 
+// Score calculation
+var score = document.getElementById("score");
+var scoreNumber = "I love Dunja <3"
+
+function calculateScore(){
+    document.getElementById("score").innerHTML = scoreNumber;
+}
+
+// Sort out the SCORE rating system
