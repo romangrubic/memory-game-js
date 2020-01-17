@@ -23,7 +23,7 @@ $("#resetBoard").click(function () {
     resetScore();
     flipBack();
     randomOrder();
-    if(timer > 0) {timer = 0};
+    if(timer > 0) {timer = 1};
     startTime();
     stopGame = false;
     document.getElementById("resetBoard").disabled = true;
@@ -80,13 +80,13 @@ function matchCard() {
 
 // --- Timer   
 var timeCounter = document.getElementById("timeCounter");
-var timer = 0;
+var timer = 1;
 
 var startStop = false;
 
 function startTime(){
 elapsedTime = setInterval(function () {
-    timeCounter.innerHTML = timer + " sec"
+    timeCounter.innerHTML ="Time: " + timer + " sec"
   timer++;
 }, 1000)};   
 
@@ -137,10 +137,10 @@ var score = document.getElementById("score");
 var scoreNumber = 0
 
 function resetScore() {
-    if (scoreNumber > 0) { scoreNumber = 0};
-    document.getElementById("score").innerHTML = 0;
+    if (scoreNumber > 0) { scoreNumber = "Finish to reveal your score!" };
+    document.getElementById("score").innerHTML = "Finish to reveal your score!" ;
 }
 
 function calculateScore() {
-    document.getElementById("score").innerHTML = Math.floor(((scoreNumber * 10) / timer) * 10);
+    document.getElementById("score").innerHTML = "Your score is " + (Math.floor(((scoreNumber * 10) / timer) * 10)) + "!";
 };
