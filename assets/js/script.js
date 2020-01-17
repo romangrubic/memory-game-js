@@ -5,26 +5,26 @@ var stopGame = false;
 var library = document.querySelectorAll(".card");
 
 // ---Start Time
-var time = 30; // make options for 20 / 30 / 40 seconds
+ // make options for 20 / 30 / 40 seconds
 
 // --- Shuffle on loading the game page
 window.onload = function () {
     flipAdd();
     matchAdd();
     randomOrder();
-    stopGame = true;
     flipBack();
+    stopGame = true;    
 };
 
 // --- Play/Reset button
-$("#resetBoard").click(function () {
-    setTimer=time;
+$("#resetBoard").click(function () {  
     resetFlip();
-    matchedReset();
-    resetScore()
+    resetMatchedCounter();
+    resetScore();
     flipBack();
     randomOrder();
-    startTime()
+    if(timer > 0) {timer = 0};
+    startTime();
     stopGame = false;
     document.getElementById("resetBoard").disabled = true;
 
@@ -60,17 +60,16 @@ function flipBack() {
 function matchCard() {
     if (firstCard.dataset.image === secondCard.dataset.image) {
         console.log("Do they match? Yes! Have a cookie");
-        setTimer += 5;
         flipAdd();
         matchAdd();
-        allCardsMatched();
-        calculateScore();
-
+        scoreNumber += 10;
+        allCardsMatched();        
+        
     } else {
         console.log("Do they match? No! Wait for next turn");
-        setTimer--;
         stopGame = true;
         flipAdd();
+        scoreNumber -= 2;
         setTimeout(function () {
             firstCard.classList.toggle("flip");
             secondCard.classList.toggle("flip");
@@ -79,22 +78,21 @@ function matchCard() {
     }
 };
 
-// --- Timer 
-var gameTimer = document.getElementById("game-timer");
-var setTimer = time;
+// --- Timer   
+var timeCounter = document.getElementById("timeCounter");
+var timer = 0;
+
+var startStop = false;
 
 function startTime(){
-var timer = setInterval(function () {
-        gameTimer.innerHTML = "- Time left: " + setTimer + "sec -";
-        setTimer--;
-        if (setTimer <= 0) {
-            gameTimer.innerHTML = "- Game over! Board is locked! Reset to try again! -";
-            stopGame = true;
-            clearInterval(timer)
-            document.getElementById("resetBoard").disabled = false;
-        }
-    }, 1000)};
+elapsedTime = setInterval(function () {
+    timeCounter.innerHTML = timer + " sec"
+  timer++;
+}, 1000)};   
 
+function stopTime(){
+    clearInterval(elapsedTime);
+}
 
 // --- Flip counter
 var flipCounter = document.getElementById("flip-counter");
@@ -114,7 +112,7 @@ function flipAdd() {
 var matchCounter = document.getElementById("matched-counter")
 var match = 0
 
-function matchedReset() {
+function resetMatchedCounter() {
     if (match > 0) { match = 1 };
     document.getElementById("matched-counter").innerHTML = 0;
 }
@@ -127,8 +125,9 @@ function matchAdd() {
 // Game finish - all matched
 function allCardsMatched() {
     if (match === 9) {
+        stopTime();
+        calculateScore();
         stopGame = true;
-        clearInterval(timer);
         document.getElementById("resetBoard").disabled = false;
     }
 };
@@ -138,10 +137,10 @@ var score = document.getElementById("score");
 var scoreNumber = 0
 
 function resetScore() {
+    if (scoreNumber > 0) { scoreNumber = 0};
     document.getElementById("score").innerHTML = 0;
 }
 
 function calculateScore() {
-    document.getElementById("score").innerHTML = scoreNumber += 5;
-}
-
+    document.getElementById("score").innerHTML = Math.floor(((scoreNumber * 10) / timer) * 10);
+};
