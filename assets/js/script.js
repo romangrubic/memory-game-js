@@ -4,9 +4,6 @@ var firstCard, secondCard;
 var stopGame = false;
 var library = document.querySelectorAll(".card");
 
-// ---Start Time
- // make options for 20 / 30 / 40 seconds
-
 // --- Shuffle on loading the game page
 window.onload = function () {
     flipAdd();
@@ -86,7 +83,7 @@ var startStop = false;
 
 function startTime(){
 elapsedTime = setInterval(function () {
-    timeCounter.innerHTML ="Time: " + timer + " sec"
+    timeCounter.innerHTML ="- Time: " + timer + " sec -"
   timer++;
 }, 1000)};   
 
@@ -137,10 +134,10 @@ var score = document.getElementById("score");
 var scoreNumber = 0
 
 function resetScore() {
-    if (scoreNumber > 0) { scoreNumber = "Finish to reveal your score!" };
+    if (scoreNumber > 0) { scoreNumber = 0 };
     document.getElementById("score").innerHTML = "Finish to reveal your score!" ;
 }
 
 function calculateScore() {
-    document.getElementById("score").innerHTML = "Your score is " + (Math.floor(((scoreNumber * 10) / timer) * 10)) + "!";
+    document.getElementById("score").innerHTML = "Your score is " + (Math.floor(((scoreNumber * 7) / timer) * 20)) + "!";
 };

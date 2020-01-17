@@ -17,8 +17,11 @@ body {
     text-align: center;
     margin: 20px 0;
 }
-button {
+.choice-btn {
     margin: 20px 0;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
 }
 
 /* Board setup */ 
@@ -37,9 +40,9 @@ button {
 }
 
 .card {
-    width: 24%;
-    height: 24%;
-    margin: 0.5% 0.5%;
+    width: 23%;
+    height: 23%;
+    margin: 1% 1%;
     display: inline-block;
     position: relative;
     transform:scale(1);
@@ -61,6 +64,7 @@ button {
 }
 
 .front-face{
+    backface-visibility: hidden;
     transform: rotateY(180deg);
 }
 
@@ -77,11 +81,12 @@ footer {
     margin-top: 20px;
     text-align: center;
 }
-.list-inline-item > a > i{
+
+i {
     width: 45px;
     height: 45px;
-    margin-top: 15px;
-    padding: 19px 0;
+    margin: 5px 5x 0;
+    padding:12.5px 0;
     border-radius: 50%;
     font-size: 20px;
     line-height: 7px;
@@ -90,6 +95,27 @@ footer {
     background: orangered;
     transition: all 0.35s ease-in-out;
 }
-.list-inline-item a i:hover{
+
+i:hover{
     background: darkgreen;
+}
+
+/* Modals */
+.modal-body {
+    text-align: center;
+}
+.modal-body > p {
+    margin-bottom:  15px;
+    font-size: 20px;
+}
+.modal-body > h2 {
+    font-size: 50px;
+    margin-top: 50px;
+}
+.modal-body > h4 {
+    font-weight: 500;
+}
+.btn-block {
+    font-size: 30px;
+    height: 70px;
 }

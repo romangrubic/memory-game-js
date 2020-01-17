@@ -19,13 +19,13 @@
 				<h5>- Match the numbers -</h5>
 			</div>
 			<div>
-				<button id="resetBoard" class="btn-lg btn btn-danger">Start!</button>
-                <button id="help" class="btn-lg btn btn-info" data-toggle="modal" data-target="#helpModal" >How to play?</button>
+                <button id="help" class="btn btn-info choice-btn" data-toggle="modal" data-target="#helpModal" >How to play?</button>
+				<button id="resetBoard" class="btn btn-danger choice-btn">Start!</button>				
 			</div>
-			<h3><span id="timeCounter">- Time counter -<span></h3>
-            <h3>Flip total: <span id="flip-counter">0<span></h3>
-            <h3>Matched total: <span id="matched-counter">0<span></h3>
-            <h3><span id="score">Finish to reveal your score!<span></h3>
+			<h5><span id="timeCounter">- Time counter -<span></h5>
+            <h5>Flip total: <span id="flip-counter">0<span></h5>
+            <h5>Matched total: <span id="matched-counter">0<span></h5>
+            <h5><span id="score">Finish to reveal your score!<span></h5>
 		</div>
 	</header>
 	<section class="board">
@@ -97,46 +97,71 @@
 	</section>
 	<footer>
 		<div>
-			<h1>Made by Roman Grubic</h1>
-            <div>
+			<h2>Made by Roman Grubic</h2>
+		</div>
+        <div>
 				<ul class="list-inline">
 					<li class="list-inline-item">
 						<a href="https://www.linkedin.com/in/roman-grubic-b835ab67/" target="-blank">
 							<i class="fab fa-linkedin" aria-hidden="true"></i>
 							<span class="sr-only">LinkedIn</span></a>
-				    </li>
-			        <li class="list-inline-item">
-					    <a href="https://github.com/romangrubic" target="-blank">
-						    <i class="fab fa-github" aria-hidden="true"></i>
-						    <span class="sr-only">Github</span></a>
-				    </li>
-                    <li class="list-inline-item">
-					    <a href="" target="-blank">
-						    <i class="fas fa-envelope-open-text" aria-hidden="true"></i>
-						    <span class="sr-only">E-mail</span></a>
-				    </li>
+				</li>
+				<li class="list-inline-item">
+					<a href="https://github.com/romangrubic" target="-blank">
+						<i class="fab fa-github" aria-hidden="true"></i>
+						<span class="sr-only">Github</span></a>
+				</li>
+				<li class="list-inline-item">
+					<i class="fas fa-envelope-open-text" aria-hidden="true" data-toggle="modal" data-target="#contactModal"></i>
+						<span class="sr-only">E-mail</span>
+                    </li>
 				</ul>
 		</div>
-		</div>
 		</footer>
-        <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title" id="exampleModalLabel">How to play?</h1>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                         </button>
+					</div>
+					<div class="modal-body">
+						<h4>- Start game -</h4>
+							<p>By clicking on Start!, the board will unlock and time counter will start counting time.</p>
+                        <h4>- Finish game -</h4>
+                            <p>Finish the game by matching all cards on the board. Once you match all the cards, time will stop and you will see your score!</p>
+                        <h4>- Score rating -</h4>
+                            <p>Score is based on elapsed time and flip total! So, be fast and don't flip unnecessary.</p>
+                        <h2>All the best!</h2>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-info btn-block" data-dismiss="modal">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>
+        <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Dunja</h5>
+        <h5 class="modal-title" id="exampleModalLabel">I'm looking for new projects!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>I love you!</p>
+        <p>name email and message form</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
+
 		<script src="https://code.jquery.com/jquery-3.4.1.js"
 			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
