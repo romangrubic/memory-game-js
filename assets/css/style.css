@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url("assets/images/background.png");
+    background-color: blanchedalmond;
     height: 97.5vh;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -53,9 +53,9 @@ body {
     perspective: 2000px;
 }
 .card {
-    width: 24.5%;
-    height: 24.5%;
-    margin: 0.25% 0.25%;
+    width: 24%;
+    height: 24%;
+    margin: 0.5% 0.5%;
     display: inline-block;
     position: relative;
     transform:scale(1);
@@ -104,7 +104,9 @@ i {
 i:hover{
     background: #dc3545;
 }
-
+.form-control{
+    margin: 10px 0;
+}
 
 /* Modals */
 .modal-body {
