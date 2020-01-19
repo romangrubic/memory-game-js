@@ -10,7 +10,9 @@ window.onload = function () {
     matchAdd();
     randomOrder();
     flipBack();
-    stopGame = true;    
+    stopGame = true;
+    $(".board").hide();
+    $(".counters").hide(); 
 };
 
 // --- Play/Reset button
@@ -23,9 +25,14 @@ $("#resetBoard").click(function () {
     if(timer > 0) {timer = 1};
     startTime();
     stopGame = false;
-    document.getElementById("resetBoard").disabled = true;
-
+    $(".head").hide();
+    $(".board").show();
+    $(".counters").show();
+    $(".choice-btn").hide();
+    $("#timeCounter").show();
+    $("#score").removeClass("time-counter");
 });
+
 // --- Random order for cards
 function randomOrder() {
     library.forEach(card => {
@@ -106,26 +113,27 @@ function flipAdd() {
 }
 
 // --- Matched counter
-var matchCounter = document.getElementById("matched-counter")
 var match = 0
 
 function resetMatchedCounter() {
     if (match > 0) { match = 1 };
-    document.getElementById("matched-counter").innerHTML = 0;
+    match = 0;
 }
 
 function matchAdd() {
-    matchCounter.innerHTML = match;
     match++;
 }
 
 // Game finish - all matched
 function allCardsMatched() {
-    if (match === 9) {
+    if (match === 1) {
         stopTime();
         calculateScore();
         stopGame = true;
-        document.getElementById("resetBoard").disabled = false;
+        $("#resetBoard").show();
+        $("#timeCounter").hide();
+        $("#flip").hide();
+        $("#score").addClass("time-counter");
     }
 };
 
@@ -134,7 +142,7 @@ var score = document.getElementById("score");
 var scoreNumber = 0
 
 function resetScore() {
-    if (scoreNumber > 0) { scoreNumber = 0 };
+    if (scoreNumber > 0) { scoreNumber = 1 };
     document.getElementById("score").innerHTML = "Finish to reveal your score!" ;
 }
 

@@ -15,17 +15,18 @@
 	<header>
 		<div class="heading">
 			<div>
-				<h1>Match game!</h1>
-				<h5>- Match the animals -</h5>
+				<h1 class="head head-h1">Memory game!</h1>
+				<h2 class="head">- Match the animals -</h2>
 			</div>
 			<div>
                 <button id="help" class="btn btn-info choice-btn" data-toggle="modal" data-target="#helpModal" >How to play?</button>
-				<button id="resetBoard" class="btn btn-danger choice-btn">Start!</button>				
 			</div>
-			<h5><span id="timeCounter">- Time counter -<span></h5>
-            <h5>Flip total: <span id="flip-counter">0<span></h5>
-            <h5>Matched total: <span id="matched-counter">0<span></h5>
-            <h5><span id="score">Finish to reveal your score!<span></h5>
+            <div>
+				<button id="resetBoard" class="btn btn-danger choice-btn">Play!</button>				
+			</div>
+			<h5 class="counters time-counter"><span id="timeCounter">- Time counter -<span></h5>
+            <h5 id="flip" class="counters">Flip total: <span id="flip-counter">0<span></h5>
+            <h5 class="counters"><span id="score">Finish to reveal your score!<span></h5>
 		</div>
 	</header>
 	<section class="board">
@@ -96,10 +97,7 @@
             
 	</section>
 	<footer>
-		<div>
-			<h2>Made by Roman Grubic</h2>
-		</div>
-        <div>
+		    <div>
 				<ul class="list-inline">
 					<li class="list-inline-item">
 						<a href="https://www.linkedin.com/in/roman-grubic-b835ab67/" target="-blank">
@@ -130,11 +128,11 @@
 					</div>
 					<div class="modal-body">
 						<h4>- Start game -</h4>
-							<p>By clicking on Start!, the board will unlock and time counter will start counting time.</p>
+							<p>By clicking on Play!, the board will unlock and time counter will start counting time.</p>
                         <h4>- Finish game -</h4>
-                            <p>Finish the game by matching all cards on the board. Once you match all the cards, time will stop and you will see your score!</p>
+                            <p>Finish the game by matching all the animals on the board. Once you match all the animals, time will stop and you will see your score!</p>
                         <h4>- Score rating -</h4>
-                            <p>Score is based on elapsed time and flip total! So, be fast and don't flip unnecessary.</p>
+                            <p>Score is based on elapsed time and flip total!<br> So, be fast and don't flip unnecessary.</p>
                         <h2>Good luck!</h2>
 					</div>
 					<div class="modal-footer">
