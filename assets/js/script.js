@@ -1,3 +1,22 @@
+/* --- EmailJS --- */
+function sendMail(contactForm) {
+    emailjs.send("gmail", "contact", {
+        "from_name": contactForm.fullname.value,
+        "from_email": contactForm.emailaddress.value,
+        "project_request": contactForm.projectsummary.value
+    })
+    .then(
+        function(response) {
+            console.log("SUCCESS", response);
+        },
+        function(error) {
+            console.log("FAILED", error);
+        }
+    );    
+}
+
+
+
 // Card variables
 var turnedCard = false;
 var firstCard, secondCard;
@@ -126,7 +145,7 @@ function matchAdd() {
 
 // Game finish - all matched
 function allCardsMatched() {
-    if (match === 1) {
+    if (match === 8) {
         stopTime();
         calculateScore();
         stopGame = true;
@@ -149,3 +168,5 @@ function resetScore() {
 function calculateScore() {
     document.getElementById("score").innerHTML = "Your score is " + (Math.floor(((scoreNumber * 7) / timer) * 20)) + "!";
 };
+
+

@@ -9,6 +9,13 @@
 	<script src="https://kit.fontawesome.com/41a908fb89.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
 	<title>Memory game</title>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
+	</script>
+	<script type="text/javascript">
+		(function(){
+      emailjs.init("user_wwo3XzSnMgSAR5hgP5jJv");
+   })();
+	</script>
 </head>
 
 <body>
@@ -19,15 +26,16 @@
 				<h2 class="head">- Match the animals -</h2>
 			</div>
 			<div>
-                <button id="help" class="btn btn-info choice-btn" data-toggle="modal" data-target="#helpModal" >How to play?</button>
+				<button id="help" class="btn btn-info choice-btn" data-toggle="modal" data-target="#helpModal" >How to play?</button>
 			</div>
-            <div>
-				<button id="resetBoard" class="btn btn-danger choice-btn">Play!</button>				
+			<div>
+				<button id="resetBoard" class="btn btn-danger choice-btn">Play!</button>
 			</div>
 			<h5 class="counters time-counter"><span id="timeCounter">- Time counter -<span></h5>
             <h5 id="flip" class="counters">Flip total: <span id="flip-counter">0<span></h5>
             <h5 class="counters"><span id="score">Finish to reveal your score!<span></h5>
 		</div>
+        
 	</header>
 	<section class="board">
 		<div class="card" data-image="first">
@@ -111,8 +119,8 @@
 				</li>
 				<li class="list-inline-item">
 					<i class="fas fa-envelope-open-text" aria-hidden="true" data-toggle="modal" data-target="#contactModal"></i>
-						<span class="sr-only">E-mail</span>
-                    </li>
+					<span class="sr-only">E-mail</span>
+				</li>
 				</ul>
 		</div>
 		</footer>
@@ -128,12 +136,14 @@
 					</div>
 					<div class="modal-body">
 						<h4>- Start game -</h4>
-							<p>By clicking on Play!, the board will unlock and time counter will start counting time.</p>
-                        <h4>- Finish game -</h4>
-                            <p>Finish the game by matching all the animals on the board. Once you match all the animals, time will stop and you will see your score!</p>
-                        <h4>- Score rating -</h4>
-                            <p>Score is based on elapsed time and flip total!<br> So, be fast and don't flip unnecessary.</p>
-                        <h2>Good luck!</h2>
+						<p>By clicking on Play!, the board will unlock and time counter will start counting time.</p>
+						<h4>- Finish game -</h4>
+						<p>Finish the game by matching all the animals on the board. Once you match all the animals,
+							time will stop and you will see your score!</p>
+						<h4>- Score rating -</h4>
+						<p>Score is based on elapsed time and flip
+							total!<br> So, be fast and don't flip unnecessary.</p>
+							<h2>Good luck!</h2>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-info btn-block" data-dismiss="modal">OK</button>
@@ -141,31 +151,35 @@
 				</div>
 			</div>
 		</div>
-        <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">I'm looking for new projects!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">I'm looking for new projects!</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <div class="modal-body">
-        <p>name email and message form</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+					</div>
+					<div class="modal-body">
+						<form id="contactForm" onsubmit="return sendMail(this);">
+							<input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
+							<input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
+							<textarea rows="5" name="projectsummary" class="form-control" id="projectsummary" placeholder="Project Description" required></textarea>
+							<button type="submit" class="btn btn-secondary center-block">Send Project Request</button>
+						</form>
+					</div>
 
+				</div>
+			</div>
+		</div>
+        <script src="assets/js/email.js"></script>
 		<script src="https://code.jquery.com/jquery-3.4.1.js"
 			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-		</script>
-		<script src="assets/js/script.js"></script>
+		</script>		
+        <script src="assets/js/script.js"></script>
 </body>
 
 </html>
