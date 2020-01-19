@@ -150,4 +150,7 @@ function calculateScore() {
     document.getElementById("score").innerHTML = "Your score is " + (Math.floor(((scoreNumber * 7) / timer) * 20)) + "!";
 };
 
-
+/* --- Submit button --- */
+$("#submit").click(function (){
+    $("#contactModal").modal("toggle")
+});

@@ -163,14 +163,13 @@
         </button>
 					</div>
 					<div class="modal-body">
-						<form id="contactForm" onsubmit="return sendMail(this);">
+						<form id="contactForm" onsubmit="return sendMail(this);" method="POST">
 							<input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
 							<input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
-							<textarea rows="5" name="projectsummary" class="form-control" id="projectsummary" placeholder="Project Description" required></textarea>
-							<button type="submit" class="btn btn-primary">Send Project Request</button>
+							<textarea rows="5" name="projectsummary" class="form-control" id="projectsummary" placeholder="Write you question or project idea and hit send!" required></textarea>
+							<button type="submit" id="submit" class="btn btn-outline-danger">Send</button>
 						</form>
 					</div>
-
 				</div>
 			</div>
 		</div>
