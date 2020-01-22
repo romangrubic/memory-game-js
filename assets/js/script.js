@@ -72,7 +72,7 @@ function matchCard() {
         console.log("Do they match? Yes! Have a cookie");
         flipAdd();
         matchAdd();
-        scoreNumber += 10;
+        scoreNumber += 15;
         allCardsMatched();
 
     } else {
@@ -133,7 +133,7 @@ function matchAdd() {
 
 // Game finish - all matched
 function allCardsMatched() {
-    if (match === 1) {
+    if (match === 8) {
         stopTime();
         calculateScore();
         stopGame = true;
@@ -156,7 +156,7 @@ function resetScore() {
 }
 
 function calculateScore() {
-    document.getElementById("score").innerHTML = "Your score is " + (Math.floor(((scoreNumber * 7) / timer) * 20)) + "!";
+    document.getElementById("score").innerHTML = "Your score is " + (Math.floor(((scoreNumber * 9) / timer) * 20)) + "!";
 };
 
 /* --- Adding Scoreboard --- */
