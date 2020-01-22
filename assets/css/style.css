@@ -33,8 +33,10 @@ body {
     margin-bottom: 15px;
 }
 .time-counter {
-    font-size: 3em;
+    font-size: 2em;
+    margin-top: 20px;
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 
@@ -106,6 +108,11 @@ i:hover{
 }
 .form-control{
     margin: 10px 0;
+}
+/* --- Scoreboard --- */
+#scoreboard{
+    margin: 20px auto;
+    text-align: center;
 }
 
 /* Modals */

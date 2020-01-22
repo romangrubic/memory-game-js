@@ -3,6 +3,7 @@ var turnedCard = false;
 var firstCard, secondCard;
 var stopGame = false;
 var library = document.querySelectorAll(".card");
+let numberOfGame = 0
 
 // --- Shuffle on loading the game page
 window.onload = function () {
@@ -12,17 +13,18 @@ window.onload = function () {
     flipBack();
     stopGame = true;
     $(".board").hide();
-    $(".counters").hide(); 
+    $(".counters").hide();
+    $("#scoreboard").hide();
 };
 
 // --- Play/Reset button
-$("#resetBoard").click(function () {  
+$("#resetBoard").click(function () {
     resetFlip();
     resetMatchedCounter();
     resetScore();
     flipBack();
     randomOrder();
-    if(timer > 0) {timer = 1};
+    if (timer > 0) { timer = 1 };
     startTime();
     stopGame = false;
     $(".head").hide();
@@ -67,8 +69,8 @@ function matchCard() {
         flipAdd();
         matchAdd();
         scoreNumber += 10;
-        allCardsMatched();        
-        
+        allCardsMatched();
+
     } else {
         console.log("Do they match? No! Wait for next turn");
         stopGame = true;
@@ -78,7 +80,7 @@ function matchCard() {
             firstCard.classList.toggle("flip");
             secondCard.classList.toggle("flip");
             stopGame = false;
-            }, 1500)
+        }, 1500)
     }
 };
 
@@ -88,13 +90,14 @@ var timer = 1;
 
 var startStop = false;
 
-function startTime(){
-elapsedTime = setInterval(function () {
-    timeCounter.innerHTML ="- Time: " + timer + " sec -"
-  timer++;
-}, 1000)};   
+function startTime() {
+    elapsedTime = setInterval(function () {
+        timeCounter.innerHTML = "- Time: " + timer + " sec -"
+        timer++;
+    }, 1000)
+};
 
-function stopTime(){
+function stopTime() {
     clearInterval(elapsedTime);
 }
 
@@ -126,7 +129,7 @@ function matchAdd() {
 
 // Game finish - all matched
 function allCardsMatched() {
-    if (match === 8) {
+    if (match === 1) {
         stopTime();
         calculateScore();
         stopGame = true;
@@ -134,6 +137,8 @@ function allCardsMatched() {
         $("#timeCounter").hide();
         $("#flip").hide();
         $("#score").addClass("time-counter");
+        numberOfGame++
+        addScoreboard();
     }
 };
 
@@ -143,14 +148,30 @@ var scoreNumber = 0
 
 function resetScore() {
     if (scoreNumber > 0) { scoreNumber = 1 };
-    document.getElementById("score").innerHTML = "Finish to reveal your score!" ;
+    document.getElementById("score").innerHTML = "Finish to reveal your score!";
 }
 
 function calculateScore() {
     document.getElementById("score").innerHTML = "Your score is " + (Math.floor(((scoreNumber * 7) / timer) * 20)) + "!";
 };
 
+/* --- Adding Scoreboard --- */
+function addScoreboard() {
+    $("#scoreboard").show();
+    
+    if (typeof (Storage) !== "undefined") {
+               
+        let score = document.createElement("h3");
+        score.innerHTML =[numberOfGame] + ". round: " + (Math.floor(((scoreNumber * 7) / timer) * 20)) + "pts";
+        document.getElementById("scoreboard").appendChild(score);
+        
+    } else {
+        document.getElementById("scoreboard").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+
 /* --- Submit button --- */
-$("#submit").click(function (){
+$("#submit").click(function () {
     $("#contactModal").modal("toggle")
 });

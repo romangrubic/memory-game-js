@@ -32,12 +32,12 @@
 				<button id="resetBoard" class="btn btn-danger choice-btn">Play!</button>
 			</div>
 			<h5 class="counters time-counter"><span id="timeCounter">- Time counter -<span></h5>
-            <h5 id="flip" class="counters">Flip total: <span id="flip-counter">0<span></h5>
+            <h5 id="flip" class="counters">Turn total: <span id="flip-counter">0<span></h5>
             <h5 class="counters"><span id="score">Finish to reveal your score!<span></h5>
 		</div>
         
 	</header>
-	<section class="board">
+    <section class="board">
 		<div class="card" data-image="first">
 			<img src="assets/images/first-pair.jpeg" class="front-face" alt="Frontside of a card">
 			<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
@@ -104,6 +104,10 @@
             </div>
             
 	</section>
+    <div id="scoreboard">
+            <h1>Temporary scoreboard</h1>
+        </div>
+    
 	<footer>
 		    <div>
 				<ul class="list-inline">
@@ -141,9 +145,9 @@
 						<h4>- Finish game -</h4>
 						<p>Finish the game by matching all the animals on the board. Once you match all the animals,
 							time will stop and you will see your score!</p>
-						<h4>- Score rating -</h4>
-						<p>Score is based on elapsed time and flip
-							total!<br> So, be fast and don't flip unnecessary.</p>
+						<h4>- Score and Scoreboard -</h4>
+						<p>Score is based on elapsed time and turn
+							total! <br> Temporary scoreboard will show once you finish the game and when you leave the page, it will dissapear.</p>
 							<h2>Good luck!</h2>
 					</div>
 					<div class="modal-footer">
@@ -173,14 +177,14 @@
 				</div>
 			</div>
 		</div>
-        
+
 		<script src="https://code.jquery.com/jquery-3.4.1.js"
 			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
 		</script>
-        <script src="assets/js/email.js"></script>		
-        <script src="assets/js/script.js"></script>
+		<script src="assets/js/email.js"></script>
+		<script src="assets/js/script.js"></script>
 </body>
 
 </html>
