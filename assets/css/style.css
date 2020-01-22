@@ -14,7 +14,7 @@ body {
 /* Heading */
 .heading {
     text-align: center;
-    margin: 20px 0;
+    margin: 5px 0;
 }
 .head-h1 {
     font-size: 4em;
@@ -23,41 +23,51 @@ body {
 .choice-btn {
     margin: 10px 0;
     width: 300px;
-    height: 100px;
+    height: 80px;
     font-size: 40px;
 }
 #help {
     margin-top: 60px;
+    margin-bottom: 30px
 }
 #resetBoard {
-    margin-bottom: 15px;
+    margin:11px 0;
 }
 .time-counter {
-    font-size: 2em;
-    margin-top: 20px;
+    font-size: 3em;
+    margin-top: 50px;
     margin-bottom: 10px;
     font-weight: 700;
 }
+.score{
+    margin: 0;
+    font-size: 2em;
+    font-weight: 700
 
+}
 
 /* Board setup */ 
-.board {
+#board-score{
+    margin: auto;
+}
+#board {
     background-color: white;
     width: 30%;
-    min-width: 300px;
+    min-width: 250px;
     max-width: 500px;
     height: 60%;
     min-height: 500px;
     display: flex;
     flex-wrap: wrap;
-    margin: 30px auto 0;
+    margin:0 auto;
     border: 5px solid black;
     perspective: 2000px;
+    padding: 0px;
 }
+
 .card {
-    width: 24%;
-    height: 24%;
-    margin: 0.5% 0.5%;
+    width: 24%;    
+    margin: 0.5%;
     display: inline-block;
     position: relative;
     transform:scale(1);
@@ -87,7 +97,7 @@ body {
 
 /* Footer */
 footer {
-    margin-top: 15px;
+    margin-top: 30px;
     text-align: center;
 }
 i {
@@ -111,8 +121,9 @@ i:hover{
 }
 /* --- Scoreboard --- */
 #scoreboard{
-    margin: 20px auto;
-    text-align: center;
+    margin: 20px 0;
+    text-align: left;
+    padding: 0;
 }
 
 /* Modals */

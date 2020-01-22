@@ -20,7 +20,7 @@
 
 <body>
 	<header>
-		<div class="heading">
+		<div class="heading col-12">
 			<div>
 				<h1 class="head head-h1">Memory game!</h1>
 				<h2 class="head">- Match the animals -</h2>
@@ -32,12 +32,14 @@
 				<button id="resetBoard" class="btn btn-danger choice-btn">Play!</button>
 			</div>
 			<h5 class="counters time-counter"><span id="timeCounter">- Time counter -<span></h5>
-            <h5 id="flip" class="counters">Turn total: <span id="flip-counter">0<span></h5>
-            <h5 class="counters"><span id="score">Finish to reveal your score!<span></h5>
+            <h2 id="flip" class="counters">Turn total: <span id="flip-counter">0<span></h2>
+            <h4 id="score" class="counters"><span >Finish to reveal your score!<span></h4>
 		</div>
+
         
 	</header>
-    <section class="board">
+    <section id="board-score" class="row">
+    <div id="board" class="col-12 col-md-9">
 		<div class="card" data-image="first">
 			<img src="assets/images/first-pair.jpeg" class="front-face" alt="Frontside of a card">
 			<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
@@ -103,14 +105,15 @@
 																		<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
             
-	</section>
-    <div id="scoreboard">
-            <h1>Temporary scoreboard</h1>
+	</div>
+    <div id="scoreboard" class="col-12 col-md-3">
+            <h1>Scoreboard</h1>
         </div>
+        </section>
     
 	<footer>
 		    <div>
-				<ul class="list-inline">
+				<ul class="list-inline col-12">
 					<li class="list-inline-item">
 						<a href="https://www.linkedin.com/in/roman-grubic-b835ab67/" target="-blank">
 							<i class="fab fa-linkedin" aria-hidden="true"></i>
@@ -147,7 +150,8 @@
 							time will stop and you will see your score!</p>
 						<h4>- Score and Scoreboard -</h4>
 						<p>Score is based on elapsed time and turn
-							total! <br> Temporary scoreboard will show once you finish the game and when you leave the page, it will dissapear.</p>
+							total!
+							<br> Temporary scoreboard will show once you finish the game and when you leave the page, it will dissapear.</p>
 							<h2>Good luck!</h2>
 					</div>
 					<div class="modal-footer">

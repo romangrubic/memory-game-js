@@ -12,7 +12,7 @@ window.onload = function () {
     randomOrder();
     flipBack();
     stopGame = true;
-    $(".board").hide();
+    $("#board").hide();
     $(".counters").hide();
     $("#scoreboard").hide();
 };
@@ -28,11 +28,15 @@ $("#resetBoard").click(function () {
     startTime();
     stopGame = false;
     $(".head").hide();
-    $(".board").show();
+    $("#board").show();
     $(".counters").show();
     $(".choice-btn").hide();
     $("#timeCounter").show();
     $("#score").removeClass("time-counter");
+    $("#scoreboard").show();
+    $(".heading").addClass("col-md-9")
+    $(".list-inline").addClass("col-md-9")
+    $("#score").removeClass("score");
 });
 
 // --- Random order for cards
@@ -136,7 +140,7 @@ function allCardsMatched() {
         $("#resetBoard").show();
         $("#timeCounter").hide();
         $("#flip").hide();
-        $("#score").addClass("time-counter");
+        $("#score").addClass("score");
         numberOfGame++
         addScoreboard();
     }
@@ -156,15 +160,11 @@ function calculateScore() {
 };
 
 /* --- Adding Scoreboard --- */
-function addScoreboard() {
-    $("#scoreboard").show();
-    
-    if (typeof (Storage) !== "undefined") {
-               
+function addScoreboard() {    
+    if (typeof (Storage) !== "undefined") {               
         let score = document.createElement("h3");
         score.innerHTML =[numberOfGame] + ". round: " + (Math.floor(((scoreNumber * 7) / timer) * 20)) + "pts";
-        document.getElementById("scoreboard").appendChild(score);
-        
+        document.getElementById("scoreboard").appendChild(score);        
     } else {
         document.getElementById("scoreboard").innerHTML = "Sorry, your browser does not support web storage...";
     }
