@@ -162,8 +162,8 @@ function calculateScore() {
 /* --- Adding Scoreboard --- */
 function addScoreboard() {    
     if (typeof (Storage) !== "undefined") {               
-        let score = document.createElement("h3");
-        score.innerHTML =[numberOfGame] + ". round: " + (Math.floor(((scoreNumber * 7) / timer) * 20)) + "pts";
+        let score = document.createElement("h4");
+        score.innerHTML =[numberOfGame] + ". round: " + (Math.floor(((scoreNumber * 9) / timer) * 20)) + "pts";
         document.getElementById("scoreboard").appendChild(score);        
     } else {
         document.getElementById("scoreboard").innerHTML = "Sorry, your browser does not support web storage...";
