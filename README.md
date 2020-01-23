@@ -14,8 +14,7 @@ Pelman and the game is often called Pelmanism.
 
 ## UX
   
-This site was made for user's who are looking for a simple game to pass the time and for 
-user's who are trying to improve their concentration and memory.
+This site was made for user's who are trying to improve their concentration and/or memory and for user's who are looking for a simple game to pass the time.
 
 Once the user arrives at the page, will see a landing page with the heading, a help button, an action button and a footer with social link and a contact modal form.
 All of them are centered through the middle so user don't have to run across the screen and they can easily follow up-down the screen.
@@ -29,7 +28,7 @@ Also their score will be saved temporarily on the scoreboard on the right side u
  so multiple users can compete by taking turns in finishing the game. Once the user reload the page or closes it down, the scores will delete themselves.
 
 
-Using only three colors (blanchedalmond, light-blue, light-red) and making all the right elements stand out, so the visitor knows exactly
+Using only three colors (blanchedalmond, light-blue, light-red) and making all the right elements stand out,the visitor knows exactly
 what they see and where to go the moment they open the website.
 
 ## Features

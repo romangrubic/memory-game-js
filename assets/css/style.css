@@ -4,14 +4,13 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 body {
     background-color: blanchedalmond;
     height: 97.5vh;
     font-family: 'Ubuntu', sans-serif;
 }
 
-/* Heading */
+/* --- Heading --- */
 .heading {
     text-align: center;
     margin: 5px 0;
@@ -46,7 +45,7 @@ body {
 
 }
 
-/* Board setup */ 
+/* --- Board setup --- */ 
 #board-score{
     margin: auto;
 }
@@ -64,7 +63,6 @@ body {
     perspective: 2000px;
     padding: 0px;
 }
-
 .card {
     width: 24%;    
     margin: 0.5%;
@@ -94,8 +92,17 @@ body {
     backface-visibility: hidden;
 }
 
+/* --- Scoreboard --- */
+#scoreboard{
+    margin: 20px 0;
+    text-align: center;
+    padding: 0;
+}
+.score-heading{
+    font-size: 200px;
+}
 
-/* Footer */
+/* --- Footer --- */
 footer {
     margin-top: 30px;
     text-align: center;
@@ -119,14 +126,8 @@ i:hover{
 .form-control{
     margin: 10px 0;
 }
-/* --- Scoreboard --- */
-#scoreboard{
-    margin: 20px 0;
-    text-align: center;
-    padding: 0;
-}
 
-/* Modals */
+/* --- Modals --- */
 .modal-body {
     text-align: center;
 }

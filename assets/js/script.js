@@ -1,53 +1,49 @@
-// Card variables
+// --- Card variables ---
 var turnedCard = false;
 var firstCard, secondCard;
 var stopGame = false;
 var library = document.querySelectorAll(".card");
-let numberOfGame = 0
 
-// --- Shuffle on loading the game page
+// --- Loading the game site ---
 window.onload = function () {
     flipAdd();
     matchAdd();
-    randomOrder();
-    flipBack();
-    stopGame = true;
     $("#board").hide();
     $(".counters").hide();
     $("#scoreboard").hide();
 };
 
-// --- Play/Reset button
+// --- Play/Reset button ---
 $("#resetBoard").click(function () {
     resetFlip();
     resetMatchedCounter();
     resetScore();
     flipBack();
     randomOrder();
-    if (timer > 0) { timer = 1 };
+    if (timer > 0) { timer = 0 }
     startTime();
     stopGame = false;
     $(".head").hide();
-    $("#board").show();
-    $(".counters").show();
     $(".choice-btn").hide();
+    $("#board").show();
+    $(".counters").show();    
     $("#timeCounter").show();
-    $("#score").removeClass("time-counter");
     $("#scoreboard").show();
-    $(".heading").addClass("col-md-9")
-    $(".list-inline").addClass("col-md-9")
+    $("#score").removeClass("time-counter");
     $("#score").removeClass("score");
+    $(".heading").addClass("col-md-9");
+    $(".list-inline").addClass("col-md-9");    
 });
 
-// --- Random order for cards
+// --- Random order for cards ---
 function randomOrder() {
     library.forEach(card => {
         var randomNumber = Math.floor(Math.random() * (library.length));
         card.style.order = randomNumber;
     });
-};
+}
 
-// --- Flip card
+// --- Flip card ---
 $(".card").click(function flipCard() {
     if (stopGame) return;
     this.classList.toggle("flip");
@@ -61,12 +57,12 @@ $(".card").click(function flipCard() {
     }
 });
 
-// --- Flip it back
+// --- Flip it back ---
 function flipBack() {
     $("div").filter(".flip").removeClass("flip");
 }
 
-// --- Does the cards match?
+// --- Do the cards match? ---
 function matchCard() {
     if (firstCard.dataset.image === secondCard.dataset.image) {
         console.log("Do they match? Yes! Have a cookie");
@@ -74,7 +70,6 @@ function matchCard() {
         matchAdd();
         scoreNumber += 15;
         allCardsMatched();
-
     } else {
         console.log("Do they match? No! Wait for next turn");
         stopGame = true;
@@ -84,33 +79,46 @@ function matchCard() {
             firstCard.classList.toggle("flip");
             secondCard.classList.toggle("flip");
             stopGame = false;
-        }, 1500)
+        }, 1500);
     }
-};
+}
 
-// --- Timer   
+// --- Game finish ---
+function allCardsMatched() {
+    if (match === 8) {
+        stopTime();
+        calculateScore();
+        stopGame = true;        
+        $("#timeCounter").hide();
+        $("#flip").hide();
+        $("#resetBoard").show();
+        $("#score").addClass("score");
+        numberOfGame++;
+        addScoreboard();
+    }
+}
+
+// --- Time counter ---
 var timeCounter = document.getElementById("timeCounter");
-var timer = 1;
-
-var startStop = false;
+var timer = 0;
 
 function startTime() {
     elapsedTime = setInterval(function () {
-        timeCounter.innerHTML = "- Time: " + timer + " sec -"
+        timeCounter.innerHTML = "- Time: " + timer + " sec -";
         timer++;
-    }, 1000)
-};
+    }, 1000);
+}
 
 function stopTime() {
     clearInterval(elapsedTime);
 }
 
-// --- Flip counter
+// --- Flip counter ---
 var flipCounter = document.getElementById("flip-counter");
 var flip = 0;
 
 function resetFlip() {
-    if (flip > 0) { flip = 1 };
+    if (flip > 0) { flip = 1 }
     document.getElementById("flip-counter").innerHTML = 0;
 }
 
@@ -123,7 +131,7 @@ function flipAdd() {
 var match = 0
 
 function resetMatchedCounter() {
-    if (match > 0) { match = 1 };
+    if (match > 0) { match = 1 }
     match = 0;
 }
 
@@ -131,35 +139,21 @@ function matchAdd() {
     match++;
 }
 
-// Game finish - all matched
-function allCardsMatched() {
-    if (match === 8) {
-        stopTime();
-        calculateScore();
-        stopGame = true;
-        $("#resetBoard").show();
-        $("#timeCounter").hide();
-        $("#flip").hide();
-        $("#score").addClass("score");
-        numberOfGame++
-        addScoreboard();
-    }
-};
-
 // Score calculation
-var score = document.getElementById("score");
-var scoreNumber = 0
+var scoreNumber = 0;
 
 function resetScore() {
-    if (scoreNumber > 0) { scoreNumber = 1 };
+    if (scoreNumber > 0) { scoreNumber = 1 }
     document.getElementById("score").innerHTML = "Finish to reveal your score!";
 }
 
 function calculateScore() {
     document.getElementById("score").innerHTML = "Your score is " + (Math.floor(((scoreNumber * 9) / timer) * 20)) + "!";
-};
+}
 
 /* --- Adding Scoreboard --- */
+var numberOfGame = 0;
+
 function addScoreboard() {    
     if (typeof (Storage) !== "undefined") {               
         let score = document.createElement("h4");
@@ -170,8 +164,7 @@ function addScoreboard() {
     }
 }
 
-
 /* --- Submit button --- */
 $("#submit").click(function () {
-    $("#contactModal").modal("toggle")
+    $("#contactModal").modal("toggle");
 });

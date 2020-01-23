@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +8,9 @@
 	<script src="https://kit.fontawesome.com/41a908fb89.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
 	<title>Memory game</title>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
-	</script>
-	<script type="text/javascript">
-		(function(){
-      emailjs.init("user_wwo3XzSnMgSAR5hgP5jJv");
-   })();
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+	<script>(function(){emailjs.init("user_wwo3XzSnMgSAR5hgP5jJv");})();</script>
 </head>
-
 <body>
 	<header>
 		<div class="heading col-12">
@@ -31,93 +24,89 @@
 			<div>
 				<button id="resetBoard" class="btn btn-danger choice-btn">Play!</button>
 			</div>
-			<h5 class="counters time-counter"><span id="timeCounter">- Time counter -<span></h5>
-            <h2 id="flip" class="counters">Turn total: <span id="flip-counter">0<span></h2>
-            <h4 id="score" class="counters"><span >Finish to reveal your score!<span></h4>
+			<h5 class="counters time-counter"><span id="timeCounter">- Time counter -</span></h5>
+			<h2 id="flip" class="counters">Turn total: <span id="flip-counter">0</span></h2>
+			<h4 id="score" class="counters"><span >Finish to reveal your score!</span></h4>
 		</div>
-
-        
 	</header>
-    <section id="board-score" class="row">
-    <div id="board" class="col-12 col-md-9">
-		<div class="card" data-image="first">
-			<img src="assets/images/first-pair.jpeg" class="front-face" alt="Frontside of a card">
-			<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
+	<section id="board-score" class="row">
+		<div id="board" class="col-12 col-md-9">
+			<div class="card" data-image="first">
+				<img src="assets/images/first-pair.jpeg" class="front-face" alt="Frontside of a card">
+				<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
 			<div class="card" data-image="first">
 				<img src="assets/images/first-pair.jpeg" class="front-face" alt="Frontside of a card">
 				<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
-				      </div>
-				<div class="card" data-image="second">
-					<img src="assets/images/second-pair.jpg" class="front-face" alt="Frontside of a card">
-					<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
-					        </div>
-					<div class="card" data-image="second">
-						<img src="assets/images/second-pair.jpg" class="front-face" alt="Frontside of a card">
-						<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
-						        </div>
-						<div class="card" data-image="third">
-							<img src="assets/images/third-pair.jpeg" class="front-face" alt="Frontside of a card">
-							<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
+			</div>
+			<div class="card" data-image="second">
+				<img src="assets/images/second-pair.jpg" class="front-face" alt="Frontside of a card">
+				<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
+			</div>
+			<div class="card" data-image="second">
+				<img src="assets/images/second-pair.jpg" class="front-face" alt="Frontside of a card">
+				<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
+			</div>
+			<div class="card" data-image="third">
+				<img src="assets/images/third-pair.jpeg" class="front-face" alt="Frontside of a card">
+				<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
-							<div class="card" data-image="third">
-								<img src="assets/images/third-pair.jpeg" class="front-face" alt="Frontside of a card">
-								<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
+			<div class="card" data-image="third">
+				<img src="assets/images/third-pair.jpeg" class="front-face" alt="Frontside of a card">
+				<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
-								<div class="card" data-image="fourth">
-									<img src="assets/images/fourth-pair.jpeg" class="front-face" alt="Frontside of a card">
-									<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
+			<div class="card" data-image="fourth">
+			    <img src="assets/images/fourth-pair.jpeg" class="front-face" alt="Frontside of a card">
+				<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
-									<div class="card" data-image="fourth">
-										<img src="assets/images/fourth-pair.jpeg" class="front-face" alt="Frontside of a card">
-										<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
+			<div class="card" data-image="fourth">
+				<img src="assets/images/fourth-pair.jpeg" class="front-face" alt="Frontside of a card">
+				<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
-										<div class="card" data-image="fifth">
-											<img src="assets/images/fifth-pair.jpeg" class="front-face" alt="Frontside of a card">
-											<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
+			<div class="card" data-image="fifth">
+				<img src="assets/images/fifth-pair.jpeg" class="front-face" alt="Frontside of a card">
+				<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
-											<div class="card" data-image="fifth">
-												<img src="assets/images/fifth-pair.jpeg" class="front-face" alt="Frontside of a card">
-												<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
+			<div class="card" data-image="fifth">
+				<img src="assets/images/fifth-pair.jpeg" class="front-face" alt="Frontside of a card">
+				<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
-												<div class="card" data-image="sixth">
-													<img src="assets/images/sixth-pair.jpeg" class="front-face" alt="Frontside of a card">
-													<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
+			<div class="card" data-image="sixth">
+				<img src="assets/images/sixth-pair.jpeg" class="front-face" alt="Frontside of a card">
+				<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
-													<div class="card" data-image="sixth">
-														<img src="assets/images/sixth-pair.jpeg" class="front-face" alt="Frontside of a card">
-														<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
+			<div class="card" data-image="sixth">
+				<img src="assets/images/sixth-pair.jpeg" class="front-face" alt="Frontside of a card">
+				<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
-														<div class="card" data-image="seventh">
-															<img src="assets/images/seventh-pair.jpeg" class="front-face" alt="Frontside of a card">
-															<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
+			<div class="card" data-image="seventh">
+				<img src="assets/images/seventh-pair.jpeg" class="front-face" alt="Frontside of a card">
+				<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
-															<div class="card" data-image="seventh">
-																<img src="assets/images/seventh-pair.jpeg" class="front-face" alt="Frontside of a card">
-																<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
+			<div class="card" data-image="seventh">
+				<img src="assets/images/seventh-pair.jpeg" class="front-face" alt="Frontside of a card">
+				<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
-																<div class="card" data-image="eight">
-																	<img src="assets/images/eight-pair.jpg" class="front-face" alt="Frontside of a card">
-																	<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
+			<div class="card" data-image="eight">
+				<img src="assets/images/eight-pair.jpg" class="front-face" alt="Frontside of a card">
+				<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
-																	<div class="card" data-image="eight">
-																		<img src="assets/images/eight-pair.jpg" class="front-face" alt="Frontside of a card">
-																		<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
+			<div class="card" data-image="eight">
+				<img src="assets/images/eight-pair.jpg" class="front-face" alt="Frontside of a card">
+				<img src="assets/images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
-            
-	</div>
-    <div id="scoreboard" class="col-12 col-md-3">
-            <h1>Scoreboard</h1>
-        </div>
-        </section>
-    
+		</div>
+		<div id="scoreboard" class="col-12 col-md-3">
+			<h2>Scoreboard</h2>
+		</div>
+	</section>
 	<footer>
-		    <div>
-				<ul class="list-inline col-12">
-					<li class="list-inline-item">
-						<a href="https://www.linkedin.com/in/roman-grubic-b835ab67/" target="-blank">
-							<i class="fab fa-linkedin" aria-hidden="true"></i>
-							<span class="sr-only">LinkedIn</span></a>
+		<div>
+			<ul class="list-inline col-12">
+				<li class="list-inline-item">
+					<a href="https://www.linkedin.com/in/roman-grubic-b835ab67/" target="-blank">
+						<i class="fab fa-linkedin" aria-hidden="true"></i>
+						<span class="sr-only">LinkedIn</span></a>
 				</li>
 				<li class="list-inline-item">
 					<a href="https://github.com/romangrubic" target="-blank">
@@ -128,67 +117,63 @@
 					<i class="fas fa-envelope-open-text" aria-hidden="true" data-toggle="modal" data-target="#contactModal"></i>
 					<span class="sr-only">E-mail</span>
 				</li>
-				</ul>
+			</ul>
 		</div>
-
-		</footer>
-		<div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h1 class="modal-title" id="exampleModalLabel">How to play?</h1>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	</footer>
+	<div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModal" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title" id="helpModalheading">How to play?</h1>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                         </button>
-					</div>
-					<div class="modal-body">
-						<h4>- Start game -</h4>
-						<p>By clicking on Play!, the board will display itself and time counter will start counting time.</p>
-						<h4>- Finish game -</h4>
-						<p>Finish the game by matching all the animals on the board. Once you match all the animals,
-							time will stop and you will see your score on Scoreboard!</p>
-						<h4>- Score and Scoreboard -</h4>
-						<p>Score is based on elapsed time and turn
-							total!
-							<br> Scoreboard will store your scores made during session and when you leave the page, it will dissapear.</p>
-							<h2>Good luck!</h2>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-info btn-block" data-dismiss="modal">OK</button>
-					</div>
+                    </button>
+				</div>
+				<div class="modal-body">
+					<h4>- Start game -</h4>
+					<p>By clicking on Play!, the board will display itself and time counter will start counting time.
+					</p>
+					<h4>- Finish game -</h4>
+					<p>Finish the game by matching all the animals on the board. Once you match all the animals,
+						time will stop and you will see your score on Scoreboard!</p>
+					<h4>- Score and Scoreboard -</h4>
+					<p>Score is based on elapsed time and turn
+						total!
+						<br> Scoreboard will store your scores made during session and when you leave the page, it will dissapear.</p>
+						<h2>Good luck!</h2>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info btn-block" data-dismiss="modal">OK</button>
 				</div>
 			</div>
 		</div>
-		<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h2 class="modal-title" id="exampleModalLabel">I'm looking for new projects!</h2>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-					</div>
-					<div class="modal-body">
-						<form id="contactForm" onsubmit="return sendMail(this);" method="POST">
-							<input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
-							<input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
-							<textarea rows="5" name="projectsummary" class="form-control" id="projectsummary" placeholder="Write you question or project idea and hit send!" required></textarea>
-							<button type="submit" id="submit" class="btn btn-outline-danger">Send</button>
-						</form>
-					</div>
+	</div>
+	<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModal"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title" id="contactModalheading">I'm looking for new projects!</h2>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+				</div>
+				<div class="modal-body">
+					<form id="contactForm" onsubmit="return sendMail(this);" method="POST">
+						<input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
+						<input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
+						<textarea rows="5" name="projectsummary" class="form-control" id="projectsummary" placeholder="Write you question or project idea and hit send!" required></textarea>
+						<button type="submit" id="submit" class="btn btn-outline-danger">Send</button>
+					</form>
 				</div>
 			</div>
 		</div>
-
-		<script src="https://code.jquery.com/jquery-3.4.1.js"
-			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-		</script>
-		<script src="assets/js/email.js"></script>
-		<script src="assets/js/script.js"></script>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="assets/js/email.js"></script>
+	<script src="assets/js/script.js"></script>
 </body>
-
 </html>
