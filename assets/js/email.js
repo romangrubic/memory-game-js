@@ -6,7 +6,11 @@ function sendMail(contactForm) {
     })
     .then(
         function(response) {
-            console.log("SUCCESS", response);
+            console.log("SUCCESS", response)
+            $("#submit").text("Message sent!");
+            $("#submit").removeClass("btn-outline-danger")
+            $("#submit").addClass("btn-primary")
+            $("#contactModal").modal("toggle");
         },
         function(error) {
             console.log("FAILED", error);

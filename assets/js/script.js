@@ -164,7 +164,7 @@ function addScoreboard() {
     }
 }
 
-/* --- Submit button --- */
+/* --- Submit button --- 
 $("#submit").click(function () {
     $("#contactModal").modal("toggle");
-});
+});*/
