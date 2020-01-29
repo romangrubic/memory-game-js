@@ -6,11 +6,11 @@ function sendMail(contactForm) {
     })
     .then(
         function(response) {
-            console.log("SUCCESS", response)
-            $("#submit").text("Message sent!");
-            $("#submit").removeClass("btn-outline-danger")
-            $("#submit").addClass("btn-primary")
-            $("#contactModal").modal("toggle");
+            console.log("SUCCESS", response);
+            $("#submit").text("Message sent! Closing....");
+            $("#submit").removeClass("btn-outline-danger");
+            $("#submit").addClass("btn-primary");
+            setTimeout(function(){$("#contactModal").modal("toggle"); }, 2000);            
         },
         function(error) {
             console.log("FAILED", error);

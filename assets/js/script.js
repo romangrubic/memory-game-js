@@ -163,8 +163,3 @@ function addScoreboard() {
         document.getElementById("scoreboard").innerHTML = "Sorry, your browser does not support web storage...";
     }
 }
-
-/* --- Submit button --- 
-$("#submit").click(function () {
-    $("#contactModal").modal("toggle");
-});*/

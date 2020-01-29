@@ -5,7 +5,8 @@
     box-sizing: border-box;
 }
 body {
-    background: url(../images/background.jpg) no-repeat fixed;
+    background: url(../images/background.jpg) no-repeat fixed; 
+    background-size: cover;
     font-family: 'Ubuntu', sans-serif;
 }
 

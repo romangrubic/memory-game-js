@@ -28,7 +28,7 @@ Also their score will be saved temporarily on the scoreboard on the right side u
  so multiple users can compete by taking turns in finishing the game. Once the user reload the page or closes it down, the scores will delete themselves.
 
 
-Using only three colors (blanchedalmond, light-blue, light-red) and making all the right elements stand out,the visitor knows exactly
+Using only two colors (light-blue and light-red), background photo and making all the right elements stand out,the visitor knows exactly
 what they see and where to go the moment they open the website.
 
 ## Features
