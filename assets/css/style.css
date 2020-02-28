@@ -9,6 +9,9 @@ body {
     background-size: cover;
     font-family: 'Ubuntu', sans-serif;
 }
+.no-padding{
+    padding: 0px
+}
 
 /* --- Heading --- */
 .heading {
@@ -16,9 +19,15 @@ body {
     margin: 5px 0;
 }
 .head-h1 {
-    font-size: 4em;
+    font-size: 4.5em;
     margin: 4% 0;
     font-weight: 600;
+    color: rgba(255, 255, 255);
+    text-shadow: -2.5px 0 #000000, 0 2.5px #000000, 2.5px 0 #000000, 0 -2.5px #000000;    
+}
+.head-h2{
+    color: rgba(255, 255, 255);
+    text-shadow: -1.5px 0 #00000066, 0 1.5px #00000066, 1.5px 0 #00000066, 0 -1.5px #00000066;    
 }
 .choice-btn {
     margin: 10px 0;
@@ -45,7 +54,10 @@ body {
     font-weight: 700
 
 }
-
+.counters{
+    color: white;
+    text-shadow: -1.5px 0 #000000, 0 1.5px #000000, 1.5px 0 #000000, 0 -1.5px #000000;    
+}
 /* --- Board setup --- */ 
 #board-score{
     margin: auto;
@@ -96,8 +108,8 @@ body {
 /* --- Scoreboard --- */
 #scoreboard{
     margin: 20px 0;
-    text-align: left;
-    padding: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px 30px 75px 30px;
 }
 #scoreboard > h2 {
     font-weight: 700;
@@ -106,29 +118,34 @@ body {
 
 /* --- Footer --- */
 footer {
-    margin-top: 30px;
+    margin-top: 70px;
     text-align: center;
 }
 i {
     width: 45px;
     height: 45px;
     margin: 15px 5px 0;
-    padding:12.5px 0;
+    padding:11.5px 0;
     border-radius: 50%;
     font-size: 20px;
     line-height: 7px;
     text-align: center;
     color: white;
-    background: #17a2b8;
+    background: #ffc107;
     transition: all 0.35s ease-in-out;
+    border:2px solid #28a745;
 }
 i:hover{
-    background: #dc3545;
+    background: #ff0019;
 }
 .form-control{
     margin: 10px 0;
 }
-
+.project-h{
+    padding-top: 15px;
+    color: white;
+text-shadow: -1.5px 0 #00000066, 0 1.5px #00000066, 1.5px 0 #00000066, 0 -1.5px #00000066;
+}
 /* --- Modals --- */
 .modal-body {
     text-align: center;

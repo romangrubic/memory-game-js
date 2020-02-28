@@ -16,14 +16,14 @@
 	<header>
 		<div class="heading col-12">
 			<div>
-				<h1 class="head head-h1">Memory game!</h1>
-				<h2 class="head">- Match the animals -</h2>
+				<h1 class="head head-h1 text-center">Catch animals!</h1>
+				<h2 class="head head-h2">- Match pair game -</h2>
 			</div>
 			<div>
-				<button id="help" class="btn btn-info choice-btn" data-toggle="modal" data-target="#helpModal" >How to play?</button>
+				<button id="help" class="btn btn-warning choice-btn" data-toggle="modal" data-target="#helpModal" >How to play?</button>
 			</div>
 			<div>
-				<button id="resetBoard" class="btn btn-danger choice-btn">Play!</button>
+				<button id="resetBoard" class="btn btn-success choice-btn">Play!</button>
 			</div>
 			<h5 class="counters time-counter"><span id="timeCounter">- Time counter -</span></h5>
 			<h2 id="flip" class="counters">Turn total: <span id="flip-counter">0</span></h2>
@@ -31,7 +31,7 @@
 		</div>
 	</header>
 	<section id="board-score" class="row">
-		<div id="board" class="col-12 col-md-9">
+		<div id="board" class="col-12">
 			<div class="card" data-image="first">
 				<img src="assets/images/card-images/first-pair.jpeg" class="front-face" alt="Frontside of a card">
 				<img src="assets/images/card-images/backface.png"  class="back-face" alt="Backside of a card">
@@ -97,22 +97,14 @@
 				<img src="assets/images/card-images/backface.png"  class="back-face" alt="Backside of a card">
             </div>
 		</div>
-		<div id="scoreboard" class="col-12 col-md-3">
+		<div id="scoreboard" class="counters col-12 text-center">
 			<h2>Scoreboard</h2>
 		</div>
 	</section>
 	<footer>
 		<div>
-			<ul class="list-inline col-12">
-                <li class="list-inline-item footer-icons" data-toggle="tooltip" title="Portfolio"><a href="https://romangrubic.github.io/Roman-Grubic-portfolio/" target="-blank">
-						<i class="fas fa-portrait  footer-icon" aria-hidden="true"></i>
-						<span class="sr-only">Portfolio </span></a></li>
-                <li class="list-inline-item footer-icons" data-toggle="tooltip" title="Snoop"><a href="https://adverts-project.herokuapp.com/home" target="-blank">
-						<i class="fas fa-ad  footer-icon" aria-hidden="true"></i>
-						<span class="sr-only">Snoop</span></a></li>
-                <li class="list-inline-item footer-icons" data-toggle="tooltip" title="Weather 360°"><a href="https://romangrubic.github.io/weather-app-openweather/" target="-blank">
-						<i class="fas fa-cloud-sun-rain  footer-icon" aria-hidden="true"></i>
-						<span class="sr-only">Weather 360° </span></a></li>
+        <div class="row no-padding">
+			<ul class="list-inline col-12 no-padding">
 				<li class="list-inline-item">
 					<a href="https://www.linkedin.com/in/roman-grubic-b835ab67/" target="-blank">
 						<i class="fab fa-linkedin" aria-hidden="true"></i>
@@ -128,6 +120,21 @@
 					<span class="sr-only">E-mail</span>
 				</li>
 			</ul>
+            </div>
+            <div class="row d-none d-md-block justify-content-center no-padding">
+            <h5 class="text-center project-h">Take a look at my other projects</h5>
+            <ul class="list-inline col-12">
+            <li class="list-inline-item footer-icons" data-toggle="tooltip" title="Portfolio"><a href="https://romangrubic.github.io/Roman-Grubic-portfolio/" target="-blank">
+						<i class="fas fa-portrait  footer-icon" aria-hidden="true"></i>
+						<span class="sr-only">Portfolio </span></a></li>
+                <li class="list-inline-item footer-icons" data-toggle="tooltip" title="Snoop"><a href="https://adverts-project.herokuapp.com/home" target="-blank">
+						<i class="fas fa-ad  footer-icon" aria-hidden="true"></i>
+						<span class="sr-only">Snoop</span></a></li>
+                <li class="list-inline-item footer-icons" data-toggle="tooltip" title="Weather 360°"><a href="https://romangrubic.github.io/weather-app-openweather/" target="-blank">
+						<i class="fas fa-cloud-sun-rain  footer-icon" aria-hidden="true"></i>
+						<span class="sr-only">Weather 360° </span></a></li>
+            	</ul>
+            </div>
 		</div>
 	</footer>
 	<div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModal" aria-hidden="true">
@@ -153,7 +160,7 @@
 						<h2>Good luck!</h2>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-info btn-block" data-dismiss="modal">OK</button>
+					<button type="button" class="btn btn-warning btn-block" data-dismiss="modal">OK</button>
 				</div>
 			</div>
 		</div>

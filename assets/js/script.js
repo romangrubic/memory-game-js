@@ -30,9 +30,7 @@ $("#resetBoard").click(function () {
     $("#timeCounter").show();
     $("#scoreboard").show();
     $("#score").removeClass("time-counter");
-    $("#score").removeClass("score");
-    $(".heading").addClass("col-md-9");
-    $(".list-inline").addClass("col-md-9");    
+    $("#score").removeClass("score");    
 });
 
 // --- Random order for cards ---
